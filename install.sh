@@ -442,7 +442,7 @@ EOF
 
 # shellcheck disable=SC2183  # printf string has more %s than arguments ($FMT_RAINBOW expands to multiple arguments)
 print_success() {
-  printf '%s         ╭───────────────────────────────────────────────────────────────────────╮ %s\n'      $FMT_RAINBOW $FMT_RESET
+    printf '%s         ╭───────────────────────────────────────────────────────────────────────╮ %s\n'      $FMT_RAINBOW $FMT_RESET
 printf '%s         │     %s██████╗ ███████╗███╗   ██╗██╗██╗  ██╗     ██╗   ██╗███╗   ██╗%s     │%s\n'      $FMT_RAINBOW $FMT_RESET
 printf '%s         │     %s██╔══██╗██╔════╝████╗  ██║██║╚██╗██╔╝     ██║   ██║████╗  ██║%s     │%s\n'      $FMT_RAINBOW $FMT_RESET
 printf '%s         │     %s██████╔╝█████╗  ██╔██╗ ██║██║ ╚███╔╝█████╗██║   ██║██╔██╗ ██║%s     │%s\n'      $FMT_RAINBOW $FMT_RESET
@@ -450,9 +450,7 @@ printf '%s         │     %s██╔══██╗██╔══╝  ██�
 printf '%s         │     %s██║  ██║███████╗██║ ╚████║██║██╔╝ ██╗      ╚████╔╝ ██║ ╚████║%s     │%s\n'      $FMT_RAINBOW $FMT_RESET
 printf '%s         │     %s╚═╝  ╚═╝╚══════╝╚═╝  ╚═══╝╚═╝╚═╝  ╚═╝       ╚═══╝  ╚═╝  ╚═══╝%s     │%s\n'      $FMT_RAINBOW $FMT_RESET
 printf '%s         ╰───────────────────────────────────────────────────────────────────────╯%s\n'      $FMT_RAINBOW $FMT_RESET
-                    printf '%s┌─────────────────────────────────────────────────┐%s\n'      $FMT_RAINBOW $FMT_RESET
-                    printf '%s│ %sVersion Tool Zsh%s: %s2.0  %s| Info %s: %sDont Remove %sCode%s│%s\n'      $FMT_RAINBOW $FMT_RESET
-                    printf '%s└─────────────────────────────────────────────────┘%s....is now installed!%s\n' $FMT_RAINBOW $FMT_GREEN $FMT_RESET
+  printf '%s    %s        %s           %s /____/ %s       %s     %s          %s....is now installed!%s\n' $FMT_RAINBOW $FMT_GREEN $FMT_RESET
   printf '\n'
   printf '\n'
   printf "%s %s %s\n" "Before you scream ${FMT_BOLD}${FMT_YELLOW}Oh My Zsh!${FMT_RESET} look over the" \
