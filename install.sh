@@ -442,21 +442,21 @@ EOF
 
 # shellcheck disable=SC2183  # printf string has more %s than arguments ($FMT_RAINBOW expands to multiple arguments)
 print_success() {
-  printf '%s         ╭───────────────────────────────────────────────────────────────────────╮ %s\n'      $FMT_RAINBOW $FMT_RESET
+  printf '%s         %s__      %s           %s        %s       %s     %s__   %s\n'      $FMT_RAINBOW $FMT_RESET
   printf '%s  ____  %s/ /_    %s ____ ___  %s__  __  %s ____  %s_____%s/ /_  %s\n'      $FMT_RAINBOW $FMT_RESET
   printf '%s / __ \\%s/ __ \\  %s / __ `__ \\%s/ / / / %s /_  / %s/ ___/%s __ \\ %s\n'  $FMT_RAINBOW $FMT_RESET
   printf '%s/ /_/ /%s / / / %s / / / / / /%s /_/ / %s   / /_%s(__  )%s / / / %s\n'      $FMT_RAINBOW $FMT_RESET
   printf '%s\\____/%s_/ /_/ %s /_/ /_/ /_/%s\\__, / %s   /___/%s____/%s_/ /_/  %s\n'    $FMT_RAINBOW $FMT_RESET
-  printf '%s    %s        %s           %s /____/ %s       %s     %s          %s....is now installed!%s\n' $FMT_RAINBOW $FMT_GREEN $FMT_RESET
+  printf '%s    %s        %s           %s /____/ %s       %s     %s          %s....Bản Quyền Thuộc : %sSong Uy!%s\n' $FMT_RAINBOW $FMT_GREEN $FMT_RESET
   printf '\n'
   printf '\n'
-  printf "%s %s %s\n" "Before you scream ${FMT_BOLD}${FMT_YELLOW}Oh My Zsh!${FMT_RESET} look over the" \
+  printf "%s %s %s\n" "Trước Khi Vui Mừng Đã Setting Xong ${FMT_BOLD}${FMT_YELLOW}Oh My Zsh!${FMT_RESET} Bạn Hãy Mở" \
     "$(fmt_code "$(fmt_link ".zshrc" "file://$HOME/.zshrc" --text)")" \
-    "file to select plugins, themes, and options."
+    "Để Chọn Các Plugin, Chủ Đề Và Tùy Chọn."
   printf '\n'
-  printf '%s\n' "• Follow us on Twitter: $(fmt_link @ohmyzsh https://twitter.com/ohmyzsh)"
-  printf '%s\n' "• Join our Discord community: $(fmt_link "Discord server" https://discord.gg/ohmyzsh)"
-  printf '%s\n' "• Get stickers, t-shirts, coffee mugs and more: $(fmt_link "Planet Argon Shop" https://shop.planetargon.com/collections/oh-my-zsh)"
+  printf '%s\n' "• Follow Facebook Me: $(fmt_link @100035469623868 https://www.facebook.com/profile.php?id=100035469623868)"
+  printf '%s\n' "• Support Zalo Me: $(fmt_link @maxfacebook zalo.me/maxfacebook)"
+  printf '%s\n' "• Truy Cập Website Me: $(fmt_link "Website server" https://keyvip24h.net/)"
   printf '%s\n' $FMT_RESET
 }
 
