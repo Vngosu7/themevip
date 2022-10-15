@@ -265,7 +265,7 @@ setup_ohmyzsh() {
   # precedence over umasks except for filesystems mounted with option "noacl".
   umask g-w,o-w
 
-  echo "${FMT_BLUE}Cloning Oh My Zsh...${FMT_RESET}"
+  echo "${FMT_BLUE}Đang Tải Dữ Liệu Oh My Zsh...${FMT_RESET}"
 
   command_exists git || {
     fmt_error "git is not installed"
@@ -308,7 +308,7 @@ setup_zshrc() {
   # Keep most recent old .zshrc at .zshrc.pre-oh-my-zsh, and older ones
   # with datestamp of installation that moved them aside, so we never actually
   # destroy a user's original zshrc
-  echo "${FMT_BLUE}Looking for an existing zsh config...${FMT_RESET}"
+  echo "${FMT_BLUE}Tìm Kiếm Cấu Hình ZSH Hiện Có...${FMT_RESET}"
 
   # Must use this exact name so uninstall.sh can find it
   OLD_ZSHRC=~/.zshrc.pre-oh-my-zsh
@@ -334,7 +334,7 @@ setup_zshrc() {
     mv ~/.zshrc "$OLD_ZSHRC"
   fi
 
-  echo "${FMT_GREEN}Using the Oh My Zsh template file and adding it to ~/.zshrc.${FMT_RESET}"
+  echo "${FMT_GREEN}Sử Dụng Tệp Mẫu Oh My Zsh Và Thêm Nó Vào ~/.zshrc.${FMT_RESET}"
 
   # Replace $HOME path with '$HOME' in $ZSH variable in .zshrc file
   omz=$(echo "$ZSH" | sed "s|^$HOME/|\$HOME/|")
@@ -364,10 +364,10 @@ EOF
     return
   fi
 
-  echo "${FMT_BLUE}Time to change your default shell to zsh:${FMT_RESET}"
+  echo "${FMT_BLUE}Đã Đến Lúc Thay Đổi Trình Mặc Định Của Bạn Thành Zsh:${FMT_RESET}"
 
   # Prompt for user choice on changing the default login shell
-  printf '%sDo you want to change your default shell to zsh? [Y/n]%s ' \
+  printf '%sBạn Có Muốn Thay Đổi Trình Mặc Định Của Mình Thành Zsh Không? [Y/n]%s ' \
     "$FMT_YELLOW" "$FMT_RESET"
   read -r opt
   case $opt in
@@ -412,7 +412,7 @@ EOF
     grep "^$USER:" /etc/passwd | awk -F: '{print $7}' > ~/.shell.pre-oh-my-zsh
   fi
 
-  echo "Changing your shell to $zsh..."
+  echo "Đang Thay Đổi Shell Của Bạn Thành $zsh..."
 
   # Check if user has sudo privileges to run `chsh` with or without `sudo`
   #
@@ -434,7 +434,7 @@ EOF
     fmt_error "chsh command unsuccessful. Change your default shell manually."
   else
     export SHELL="$zsh"
-    echo "${FMT_GREEN}Shell successfully changed to '$zsh'.${FMT_RESET}"
+    echo "${FMT_GREEN}Đã Thay Đổi Thành Công Thành '$zsh'.${FMT_RESET}"
   fi
 
   echo
@@ -447,16 +447,16 @@ print_success() {
   printf '%s / __ \\%s/ __ \\  %s / __ `__ \\%s/ / / / %s /_  / %s/ ___/%s __ \\ %s\n'  $FMT_RAINBOW $FMT_RESET
   printf '%s/ /_/ /%s / / / %s / / / / / /%s /_/ / %s   / /_%s(__  )%s / / / %s\n'      $FMT_RAINBOW $FMT_RESET
   printf '%s\\____/%s_/ /_/ %s /_/ /_/ /_/%s\\__, / %s   /___/%s____/%s_/ /_/  %s\n'    $FMT_RAINBOW $FMT_RESET
-  printf '%s    %s        %s           %s /____/ %s       %s     %s          %s.......Bản Quyền Thuộc : %sSong Uy!%s\n' $FMT_RAINBOW $FMT_GREEN $FMT_RESET
+  printf '%s    %s        %s           %s /____/ %s       %s     %s          %s...Bản Quyền Thuộc : %sSong Uy!%s\n' $FMT_RAINBOW $FMT_GREEN $FMT_RESET
   printf '\n'
   printf '\n'
   printf "%s %s %s\n" "Trước Khi Vui Mừng Đã Setting Xong ${FMT_BOLD}${FMT_YELLOW}Oh My Zsh!${FMT_RESET} Bạn Hãy Mở" \
     "$(fmt_code "$(fmt_link ".zshrc" "file://$HOME/.zshrc" --text)")" \
     "Để Chọn Các Plugin, Chủ Đề Và Tùy Chọn."
   printf '\n'
-  printf '%s\n' "• Follow Facebook Me: $(fmt_link @100035469623868 %sSong Uy)"
-  printf '%s\n' "• Support Zalo Me: $(fmt_link @maxfacebook %szalo.me/maxfacebook)"
-  printf '%s\n' "• Truy Cập Website Me: $(fmt_link "Website server" %shttps://keyvip24h.net/)"
+  printf '%s\n' "• Follow Facebook Me:%s $(fmt_link @100035469623868 Song Uy)"
+  printf '%s\n' "• Support Zalo Me:%s $(fmt_link @maxfacebook zalo.me/maxfacebook)"
+  printf '%s\n' "• Truy Cập Website Me:%s $(fmt_link "Website server" Keyvip24h.net)"
   printf '%s\n' $FMT_RESET
 }
 
