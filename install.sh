@@ -265,7 +265,7 @@ setup_ohmyzsh() {
   # precedence over umasks except for filesystems mounted with option "noacl".
   umask g-w,o-w
 
-  echo "${FMT_BLUE}Cloning Oh My Zsh...${FMT_RESET}"
+  echo "${FMT_BLUE}Đang Nhân Bản Oh My Zsh...${FMT_RESET}"
 
   command_exists git || {
     fmt_error "git is not installed"
@@ -364,10 +364,10 @@ EOF
     return
   fi
 
-  echo "${FMT_BLUE}Time to change your default shell to zsh:${FMT_RESET}"
+  echo "${FMT_BLUE}Đã Setting Hoàn Thành Giao Diện ZSH :${FMT_RESET}"
 
   # Prompt for user choice on changing the default login shell
-  printf '%sDo you want to change your default shell to zsh? [Y/n]%s ' \
+  printf '%Bạn Có Muốn Thay Đổi Thành Giao Diện ZSH Không? [Y/n]%s ' \
     "$FMT_YELLOW" "$FMT_RESET"
   read -r opt
   case $opt in
@@ -412,7 +412,7 @@ EOF
     grep "^$USER:" /etc/passwd | awk -F: '{print $7}' > ~/.shell.pre-oh-my-zsh
   fi
 
-  echo "Changing your shell to $zsh..."
+  echo "Đang Thực Hiện Thay Đổi $zsh..."
 
   # Check if user has sudo privileges to run `chsh` with or without `sudo`
   #
@@ -434,7 +434,7 @@ EOF
     fmt_error "chsh command unsuccessful. Change your default shell manually."
   else
     export SHELL="$zsh"
-    echo "${FMT_GREEN}Shell successfully changed to '$zsh'.${FMT_RESET}"
+    echo "${FMT_GREEN}Đã Thay Đổi Thành Coobg Giao Diện '$zsh'.${FMT_RESET}"
   fi
 
   echo
@@ -442,12 +442,17 @@ EOF
 
 # shellcheck disable=SC2183  # printf string has more %s than arguments ($FMT_RAINBOW expands to multiple arguments)
 print_success() {
-  printf '%s         %s__      %s           %s        %s       %s     %s__   %s\n'      $FMT_RAINBOW $FMT_RESET
-  printf '%s  ____  %s/ /_    %s ____ ___  %s__  __  %s ____  %s_____%s/ /_  %s\n'      $FMT_RAINBOW $FMT_RESET
-  printf '%s / __ \\%s/ __ \\  %s / __ `__ \\%s/ / / / %s /_  / %s/ ___/%s __ \\ %s\n'  $FMT_RAINBOW $FMT_RESET
-  printf '%s/ /_/ /%s / / / %s / / / / / /%s /_/ / %s   / /_%s(__  )%s / / / %s\n'      $FMT_RAINBOW $FMT_RESET
-  printf '%s\\____/%s_/ /_/ %s /_/ /_/ /_/%s\\__, / %s   /___/%s____/%s_/ /_/  %s\n'    $FMT_RAINBOW $FMT_RESET
-  printf '%s    %s        %s           %s /____/ %s       %s     %s          %s....is now installed!%s\n' $FMT_RAINBOW $FMT_GREEN $FMT_RESET
+  printf '%s         ╭───────────────────────────────────────────────────────────────────────╮ %s\n'      $FMT_RAINBOW $FMT_RESET
+printf '%s         │     %s██████╗ ███████╗███╗   ██╗██╗██╗  ██╗     ██╗   ██╗███╗   ██╗%s     │%s\n'      $FMT_RAINBOW $FMT_RESET
+printf '%s         │     %s██╔══██╗██╔════╝████╗  ██║██║╚██╗██╔╝     ██║   ██║████╗  ██║%s     │%s\n'      $FMT_RAINBOW $FMT_RESET
+printf '%s         │     %s██████╔╝█████╗  ██╔██╗ ██║██║ ╚███╔╝█████╗██║   ██║██╔██╗ ██║%s     │%s\n'      $FMT_RAINBOW $FMT_RESET
+printf '%s         │     %s██╔══██╗██╔══╝  ██║╚██╗██║██║ ██╔██╗╚════╝╚██╗ ██╔╝██║╚██╗██║%s     │%s\n'      $FMT_RAINBOW $FMT_RESET
+printf '%s         │     %s██║  ██║███████╗██║ ╚████║██║██╔╝ ██╗      ╚████╔╝ ██║ ╚████║%s     │%s\n'      $FMT_RAINBOW $FMT_RESET
+printf '%s         │     %s╚═╝  ╚═╝╚══════╝╚═╝  ╚═══╝╚═╝╚═╝  ╚═╝       ╚═══╝  ╚═╝  ╚═══╝%s     │%s\n'      $FMT_RAINBOW $FMT_RESET
+printf '%s         ╰───────────────────────────────────────────────────────────────────────╯%s\n'      $FMT_RAINBOW $FMT_RESET
+                    printf '%s┌─────────────────────────────────────────────────┐%s\n'      $FMT_RAINBOW $FMT_RESET
+                    printf '%s│ %sVersion Tool Zsh%s: %s2.0  %s| Info %s: %sDont Remove %sCode%s│%s\n'      $FMT_RAINBOW $FMT_RESET
+                    printf '%s└─────────────────────────────────────────────────┘%s....is now installed!%s\n' $FMT_RAINBOW $FMT_GREEN $FMT_RESET
   printf '\n'
   printf '\n'
   printf "%s %s %s\n" "Before you scream ${FMT_BOLD}${FMT_YELLOW}Oh My Zsh!${FMT_RESET} look over the" \
