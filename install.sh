@@ -454,9 +454,9 @@ print_success() {
     "$(fmt_code "$(fmt_link ".zshrc" "file://$HOME/.zshrc" --text)")" \
     "Để Chọn Các Plugin, Chủ Đề Và Tùy Chọn."
   printf '\n'
-  printf '%s\n' "• Follow Facebook Me:%s $(fmt_link @100035469623868 Song Uy)"
-  printf '%s\n' "• Support Zalo Me:%s $(fmt_link @maxfacebook zalo.me/maxfacebook)"
-  printf '%s\n' "• Truy Cập Website Me:%s $(fmt_link "Website server" Keyvip24h.net)"
+  printf '%s\n' "• Follow Facebook Me: $(fmt_link @100035469623868 Song Uy)"
+  printf '%s\n' "• Support Zalo Me: $(fmt_link @maxfacebook zalo.me/maxfacebook)"
+  printf '%s\n' "• Truy Cập Website Me: $(fmt_link "Website server" Keyvip24h.net)"
   printf '%s\n' $FMT_RESET
 }
 
